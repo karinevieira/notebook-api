@@ -9,6 +9,8 @@ class Contact < ApplicationRecord
   end
 
   def as_json(options={})
-    super(root: true, include: { kind: { only: :description } }, methods: :locale)
+    current_hash = super(options)
+    current_hash[:birthdate] = (I18n.l(self.birthdate) if self.birthdate.present?)
+    current_hash
   end
 end
