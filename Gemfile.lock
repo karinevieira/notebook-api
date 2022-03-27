@@ -93,6 +93,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.4.7)
@@ -115,6 +117,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.0.4.7)
       actionpack (= 6.0.4.7)
       activesupport (= 6.0.4.7)
@@ -155,7 +160,9 @@ DEPENDENCIES
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.4, >= 6.0.4.6)
+  rails-i18n (~> 6.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
