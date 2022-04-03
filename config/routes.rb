@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
     resource :phones, only: [:show]
     resource :phones, only: [:show], path: 'relationships/phones'
+    
+    resource :phone, only: [:create, :update, :destroy]
+    resource :phone, only: [:create, :update, :destroy], path: 'relationships/phones'
 
     resource :address, only: [:show, :create, :update, :destroy]
     resource :address, only: [:show, :create, :update, :destroy], path: 'relationships/address'
