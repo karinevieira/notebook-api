@@ -6,6 +6,7 @@ ruby '2.5.8'
 gem "active_model_serializers", "~> 0.10.13"
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise_token_auth", "~> 1.2"
+gem "devise-i18n", "~> 1.10"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rack-cors'
@@ -24,6 +25,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 
 
 
