@@ -1,4 +1,5 @@
 class PhonesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_contact
   before_action :set_phone, only: [:update, :destroy]
 
