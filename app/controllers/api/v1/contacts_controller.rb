@@ -4,7 +4,7 @@ class Api::V1::ContactsController < ApplicationController
 
   # GET /contacts
   def index
-    @contacts = current_api_user.contacts.all
+    @contacts = current_api_user.contacts.sorted_by_name
 
     render json: @contacts
   end
