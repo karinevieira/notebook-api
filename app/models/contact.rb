@@ -12,6 +12,8 @@ class Contact < ApplicationRecord
 
   scope :sorted_by_name, -> { order(:name) }
 
+  paginates_per 5
+
   def locale
     I18n.default_locale
   end

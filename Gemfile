@@ -7,6 +7,7 @@ gem "active_model_serializers", "~> 0.10.13"
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise_token_auth", "~> 1.2"
 gem "devise-i18n", "~> 1.10"
+gem "kaminari", "~> 1.2"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rack-cors'

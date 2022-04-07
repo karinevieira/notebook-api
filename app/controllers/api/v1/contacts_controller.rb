@@ -4,7 +4,10 @@ class Api::V1::ContactsController < ApplicationController
 
   # GET /contacts
   def index
-    @contacts = current_api_user.contacts.sorted_by_name
+    page_number = params[:page].try(:[], :number)
+    per_page = params[:page].try(:[], :size)
+
+    @contacts = current_api_user.contacts.sorted_by_name.page(page_number).per(per_page)
 
     render json: @contacts
   end
