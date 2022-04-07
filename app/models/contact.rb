@@ -10,6 +10,12 @@ class Contact < ApplicationRecord
 
   validates :name, :email, presence: true
 
+  validates_presence_of :kind
+
+  scope :sorted_by_name, -> { order(:name) }
+
+  paginates_per 5
+
   def locale
     I18n.default_locale
   end
