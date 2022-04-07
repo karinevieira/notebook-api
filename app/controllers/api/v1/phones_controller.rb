@@ -1,5 +1,5 @@
-class PhonesController < ApplicationController
-  before_action :authenticate_user!
+class Api::V1::PhonesController < ApplicationController
+  before_action :authenticate_api_user!
   before_action :set_contact
   before_action :set_phone, only: [:update, :destroy]
 
@@ -7,7 +7,7 @@ class PhonesController < ApplicationController
     @contact.phones << Phone.new(phone_params)
 
     if @contact.save
-      render json: @contact.phones, status: :created, location: contact_phones_url(@contact)
+      render json: @contact.phones, status: :created, location: api_contact_phones_url(@contact)
     else
       render json: @contact.errors, status: :unprocessable_entity
     end

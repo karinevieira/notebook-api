@@ -1,12 +1,12 @@
-class AddressesController < ApplicationController
-  before_action :authenticate_user!
+class Api::V1::AddressesController < ApplicationController
+  before_action :authenticate_api_user!
   before_action :set_contact
 
   def create
     @contact.address = Address.new(address_params)
 
     if @contact.save
-      render json: @contact.address, status: :created, location: contact_address_url(@contact)
+      render json: @contact.address, status: :created, location: api_contact_address_url(@contact)
     else
       render json: @contact.errors, status: :unprocessable_entity
     end

@@ -1,10 +1,10 @@
-class ContactsController < ApplicationController
-  before_action :authenticate_user!
+class Api::V1::ContactsController < ApplicationController
+  before_action :authenticate_api_user!
   before_action :set_contact, only: [:show, :update, :destroy]
 
   # GET /contacts
   def index
-    @contacts = current_user.contacts.all
+    @contacts = current_api_user.contacts.all
 
     render json: @contacts
   end
@@ -16,10 +16,10 @@ class ContactsController < ApplicationController
 
   # POST /contacts
   def create
-    @contact = current_user.contacts.new(contact_params)
+    @contact = current_api_user.contacts.new(contact_params)
 
     if @contact.save
-      render json: @contact, include: [:kind, :phones, :address], status: :created, location: @contact
+      render json: @contact, include: [:kind, :phones, :address], status: :created, location: api_contact_url(@contact)
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class ContactsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
-      @contact = current_user.contacts.find(params[:id])
+      @contact = current_api_user.contacts.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
