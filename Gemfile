@@ -18,6 +18,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "faker", "~> 2.20"
+  gem "rspec-rails", "~> 5.1"
 end
 
 group :development do
