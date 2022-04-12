@@ -31,7 +31,7 @@ class Api::V1::PhonesController < ApplicationController
 
   private
   def set_contact
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_api_user.contacts.find(params[:contact_id])
   end
 
   def set_phone
