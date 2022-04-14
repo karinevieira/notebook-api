@@ -2,7 +2,7 @@
 
 Building an API using Ruby on Rails 6 and authentication with devise token auth.
 
-This API follow specification for JSON:API.
+This API follows specification for JSON:API.
 
 <table>
   <tr>
@@ -90,3 +90,11 @@ Include the headers for the follow requests:
 | ``POST /api/contacts``          | Create a new contact.            | name: [String], email: [String], kind: [Integer]                                        |
 | ``PUT /api/contacts/:id``       | Edit the details of an existing contact. | name: [String], email: [String], kind: [Integer]                                |
 | ``DELETE /api/contacts/:id``    | Remove the contact.                      |                                                                |
+| ``GET /api/contacts/:contact_id/phones``    | Get all contact phones.                 |                                                     |
+| ``POST /api/contacts/:contact_id/phone``  | Add a new phone for the contact.         | number: [Integer]                                    |
+| ``PUT /api/contacts/:contact_id/phone``    | Edit the contact phone.                | number: [Integer]                                     |
+| ``DELETE /api/contacts/:contact_id/phone``    | Remove the contact phone.                      |                                            |
+| ``GET /api/contacts/:contact_id/address``    | Get all contact phones.                 |                                                    |
+| ``POST /api/contacts/:contact_id/address``  | Create a new address for the contact.    | street: [String], city: [String]                    |
+| ``PUT /api/contacts/:contact_id/address``    | Edit the contact address.                | street: [String], city: [String]                     |
+| ``DELETE /api/contacts/:contact_id/address``    | Remove the contact address.                      |                                            |
